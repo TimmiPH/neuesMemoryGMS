@@ -46,16 +46,6 @@ function updateCounter() {
     counterElement.textContent = `Züge: ${moves}`;
 }
 
-function checkForMatch() {
-    const isMatch = firstCard.innerHTML === secondCard.innerHTML;
-
-    if (isMatch) {
-        firstCard.classList.add('matched');
-        secondCard.classList.add('matched');
-        matchedPairs++;
-        if (matchedPairs === images.length) {
-            document.getElementById('newGameButton').style.display = 'block';
-        }
         function checkForMatch() {
     const isMatch = firstCard.innerHTML === secondCard.innerHTML;
 
