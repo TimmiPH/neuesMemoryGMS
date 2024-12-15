@@ -46,7 +46,7 @@ function updateCounter() {
     counterElement.textContent = `Züge: ${moves}`;
 }
 
-        function checkForMatch() {
+function checkForMatch() {
     const isMatch = firstCard.innerHTML === secondCard.innerHTML;
 
     if (isMatch) {
@@ -55,7 +55,7 @@ function updateCounter() {
         matchedPairs++;
         if (matchedPairs === images.length) {
             document.getElementById('newGameButton').style.display = 'block';
-            displayRanking(); // Rang anzeigen, wenn Spiel beendet ist
+            displayRanking();
         }
         resetBoard();
     } else {
@@ -85,17 +85,6 @@ function displayRanking() {
     document.getElementById("ranking").innerText = rankingText;
 }
 
-        resetBoard();
-    } else {
-        lockBoard = true;
-        setTimeout(() => {
-            firstCard.classList.remove('flipped');
-            secondCard.classList.remove('flipped');
-            resetBoard();
-        }, 1000);
-    }
-}
-
 function resetBoard() {
     [firstCard, secondCard] = [null, null];
     lockBoard = false;
@@ -106,3 +95,4 @@ function startNewGame() {
 }
 
 initializeGame();
+
