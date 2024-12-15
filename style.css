@@ -1,11 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 .memory-grid {
     display: grid;
     grid-template-columns: repeat(4, 100px);
@@ -31,31 +23,4 @@ body {
 
 .card.flipped {
     color: #000;
-    transform: rotateY(180deg);
-}
-
-.card.matched {
-    background-color: #d4edda;
-    cursor: default;
-}
-
-.counter {
-    margin: 20px;
-    font-size: 18px;
-    color: #333;
-}
-
-#newGameButton {
-    display: none;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #b22222;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-h1 {
-    font-size: 20px; /* Schriftgröße verkleinern */
 }
