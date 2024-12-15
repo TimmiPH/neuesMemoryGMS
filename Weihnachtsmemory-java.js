@@ -70,13 +70,13 @@ function checkForMatch() {
 
 function displayRanking() {
     let rankingText = "";
-    if (moves <= 20) {
+    if (moves <= 18) {
         rankingText = "🏆 Gedächtnis-Champion – Fast perfekt!";
-    } else if (moves <= 30) {
+    } else if (moves <= 26) {
         rankingText = "🌟 Merkweltmeister – Starke Leistung!";
-    } else if (moves <= 40) {
+    } else if (moves <= 35) {
         rankingText = "💪 Guter Gedächtnistrainer – Solide Runde!";
-    } else if (moves <= 50) {
+    } else if (moves <= 45) {
         rankingText = "👍 Zuverlässiger Finder – Nicht schlecht!";
     } else {
         rankingText = "🌱 Gedächtnis-Neuling – Übung macht den Meister!";
