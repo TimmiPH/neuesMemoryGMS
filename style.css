@@ -13,15 +13,15 @@ h1 {
 
 .memory-grid {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Kartenbreite flexibel */
+    grid-gap: 10px; /* Abstand zwischen den Karten */
     justify-content: center;
     margin: 20px auto;
 }
 
 .card {
-    width: 100px;
-    height: 100px;
+    width: 100%; /* Karte passt sich automatisch an die Spalte an */
+    aspect-ratio: 1 / 1; /* Karten bleiben immer quadratisch */
     background-color: #ffffff;
     border: 2px solid #b22222;
     border-radius: 8px;
@@ -29,21 +29,42 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px; /* Schriftgröße für Symbole */
     color: transparent;
-    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.card-symbol {
+    display: none; /* Symbol erst sichtbar machen, wenn Karte umgedreht ist */
+    font-size: 24px; /* Größe der Symbole */
+}
+
+.card-text {
+    display: none; /* Text wird nur bei Symbolen mit Text sichtbar */
+    font-size: 12px; /* Kleinere Schriftgröße für Text */
+    color: #333;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.card.flipped .card-symbol {
+    display: block; /* Symbol sichtbar, wenn Karte umgedreht ist */
+    color: #000;
+}
+
+.card.flipped .card-text {
+    display: block; /* Text sichtbar, wenn Karte umgedreht ist */
 }
 
 .card.flipped {
-    color: #000; /* Textfarbe anzeigen */
-    background-color: #d4edda; /* Grün hinterlegt */
-    transform: rotateY(180deg); /* Weicher Übergang beim Umdrehen */
+    background-color: #d4edda; /* Grün hinterlegen bei umgedrehten Karten */
+    transform: rotateY(180deg); /* Weicher Effekt beim Umdrehen */
 }
 
 .card.matched {
-    background-color: #d4edda; /* Grüner Hintergrund bei Treffern */
+    background-color: #d4edda; /* Treffer hervorheben mit Grün */
     cursor: default;
-    opacity: 0.8; /* Leicht transparent, um Treffer hervorzuheben */
+    opacity: 0.8; /* Leicht transparent bei Treffern */
 }
 
 .counter {
@@ -67,4 +88,15 @@ h1 {
 
 #newGameButton:hover {
     background-color: #8b0000;
+}
+
+/* Anpassungen für kleinere Bildschirme */
+@media (max-width: 600px) {
+    .memory-grid {
+        grid-gap: 5px; /* Weniger Abstand zwischen den Karten */
+    }
+
+    .card {
+        font-size: 14px; /* Kleinere Schriftgröße für Symbole */
+    }
 }
