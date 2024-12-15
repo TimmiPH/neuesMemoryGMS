@@ -56,6 +56,45 @@ function checkForMatch() {
         if (matchedPairs === images.length) {
             document.getElementById('newGameButton').style.display = 'block';
         }
+        function checkForMatch() {
+    const isMatch = firstCard.innerHTML === secondCard.innerHTML;
+
+    if (isMatch) {
+        firstCard.classList.add('matched');
+        secondCard.classList.add('matched');
+        matchedPairs++;
+        if (matchedPairs === images.length) {
+            document.getElementById('newGameButton').style.display = 'block';
+            displayRanking(); // Rang anzeigen, wenn Spiel beendet ist
+        }
+        resetBoard();
+    } else {
+        lockBoard = true;
+        setTimeout(() => {
+            firstCard.classList.remove('flipped');
+            secondCard.classList.remove('flipped');
+            resetBoard();
+        }, 1000);
+    }
+}
+
+function displayRanking() {
+    let rankingText = "";
+    if (moves <= 20) {
+        rankingText = "🏆 Gedächtnis-Champion – Fast perfekt!";
+    } else if (moves <= 30) {
+        rankingText = "🌟 Merkweltmeister – Starke Leistung!";
+    } else if (moves <= 40) {
+        rankingText = "💪 Guter Gedächtnistrainer – Solide Runde!";
+    } else if (moves <= 50) {
+        rankingText = "👍 Zuverlässiger Finder – Nicht schlecht!";
+    } else {
+        rankingText = "🌱 Gedächtnis-Neuling – Übung macht den Meister!";
+    }
+
+    document.getElementById("ranking").innerText = rankingText;
+}
+
         resetBoard();
     } else {
         lockBoard = true;
