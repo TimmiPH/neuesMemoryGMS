@@ -95,4 +95,3 @@ function startNewGame() {
 }
 
 initializeGame();
-
