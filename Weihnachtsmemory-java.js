@@ -71,15 +71,15 @@ function checkForMatch() {
 function displayRanking() {
     let rankingText = "";
     if (moves <= 18) {
-        rankingText = "🏆 Gedächtnis-Champion – Fast perfekt!";
-    } else if (moves <= 26) {
-        rankingText = "🌟 Merkweltmeister – Starke Leistung!";
-    } else if (moves <= 35) {
-        rankingText = "💪 Guter Gedächtnistrainer – Solide Runde!";
-    } else if (moves <= 45) {
-        rankingText = "👍 Zuverlässiger Finder – Nicht schlecht!";
+        rankingText = "🏆 Gedächtnis-Champion – Wow!";
+    } else if (moves <= 22) {
+        rankingText = "🌟 Fast Merkweltmeister – Starke Leistung!";
+    } else if (moves <= 30) {
+        rankingText = "💪 Gedächtnistrainer in Ausbildung – Solide Runde!";
+    } else if (moves <= 40) {
+        rankingText = "👍 Ganz ok, aber das geht noch besser!";
     } else {
-        rankingText = "🌱 Gedächtnis-Neuling – Übung macht den Meister!";
+        rankingText = "🌱 Gedächtnis-Neuling – Übung macht den Meister! Gleich nochmal?";
     }
 
     document.getElementById("ranking").innerText = rankingText;
