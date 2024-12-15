@@ -1,3 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #b22222;
+    margin: 20px 0;
+}
+
 .memory-grid {
     display: grid;
     grid-template-columns: repeat(4, 100px);
@@ -18,9 +31,40 @@
     align-items: center;
     font-size: 24px;
     color: transparent;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .card.flipped {
-    color: #000;
+    color: #000; /* Textfarbe anzeigen */
+    background-color: #d4edda; /* Grün hinterlegt */
+    transform: rotateY(180deg); /* Weicher Übergang beim Umdrehen */
+}
+
+.card.matched {
+    background-color: #d4edda; /* Grüner Hintergrund bei Treffern */
+    cursor: default;
+    opacity: 0.8; /* Leicht transparent, um Treffer hervorzuheben */
+}
+
+.counter {
+    margin: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+#newGameButton {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b22222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#newGameButton:hover {
+    background-color: #8b0000;
 }
